@@ -6,18 +6,6 @@ function Character(charName, genderValue, classValue, raceValue) {
   this.raceValue = raceValue;
 }
 
-function charCheck(charName) {
-  if (charName.length === 0) {
-    alert("Please enter a user name.")
-    return false;
-  } else if (charName.length === 1 || charName.length === 2 ){
-    alert("Name must be at least 3 characters in length")
-    return false;
-  } else {
-    return true;
-  }
-}
-
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
@@ -28,13 +16,20 @@ $(document).ready(function() {
     var raceValue = $("#race").val();
     var newCharacter = new Character(charName, genderValue, classValue, raceValue);
 
-    if (charCheck(charName) === true) {
-      $("#output").append("<div>" + newCharacter.charName +    "</div>" +
-                          "<div>" + newCharacter.genderValue + "</div>" +
-                          "<div>" + newCharacter.classValue +  "</div>" +
-                          "<div>" + newCharacter.raceValue +   "</div>")
-    };
 
+    if (charName.length === 0) {
+      $("#character-name").addClass("false-value");
+    } else if (charName.length === 1 || charName.length === 2) {
+      alert("Name must be at least 3 characters in length")
+    } else if (genderValue === undefined) {
+      alert("please select a gender");
+    } else {
+      $("#output").append("<div>" + newCharacter.charName +    "</div>" +
+                        "<div>" + newCharacter.genderValue + "</div>" +
+                        "<div>" + newCharacter.classValue +  "</div>" +
+                        "<div>" + newCharacter.raceValue +   "</div>")
+      $("#character-name").removeClass("false-value");
+    };
 
   });
 });
