@@ -9,14 +9,14 @@ function Character(charName, genderValue, classValue, raceValue) {
 function charCheck(charName) {
   if (charName.length === 0) {
     alert("Please enter a user name.")
+    return false;
   } else if (charName.length === 1 || charName.length === 2 ){
     alert("Name must be at least 3 characters in length")
+    return false;
+  } else {
+    return true;
   }
 }
-
-
-
-
 
 $(document).ready(function() {
   $("form").submit(function(event) {
@@ -28,11 +28,13 @@ $(document).ready(function() {
     var raceValue = $("#race").val();
     var newCharacter = new Character(charName, genderValue, classValue, raceValue);
 
-    $("#output").append("<div>" + newCharacter.charName + "</div>")
-    $("#output").append("<div>" + newCharacter.genderValue + "</div>")
-    $("#output").append("<div>" + newCharacter.classValue + "</div>")
-    $("#output").append("<div>" + newCharacter.raceValue + "</div>")
+    if (charCheck(charName) === true) {
+      $("#output").append("<div>" + newCharacter.charName +    "</div>" +
+                          "<div>" + newCharacter.genderValue + "</div>" +
+                          "<div>" + newCharacter.classValue +  "</div>" +
+                          "<div>" + newCharacter.raceValue +   "</div>")
+    };
 
-    charCheck(charName);
+
   });
 });
