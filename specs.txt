@@ -1,0 +1,14 @@
+(1) make a form with these inputs
+  name - text
+  gender - radio
+  class - dropdown
+  race - dropdown
+
+  set variables for each input
+  make object function to hold character info
+
+(2)setup html to output choices
+
+
+
+(2)

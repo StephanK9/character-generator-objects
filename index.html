@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <title>Character Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form>
+            <div class="form-group">
+              <label>Character Name:</label>
+              <input id="character-name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Male</label>
+              <input type="radio" name="gender" value="male">
+              <label>Female</label>
+              <input name="gender" type="radio" value="female">
+            </div>
+            <div class="form-group">
+              <label>Select a class</label>
+              <select class="form-control" id="class">
+                <option>Warrior</option>
+                <option>Mage</option>
+                <option>Ranger</option>
+                <option>Priest</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Select a race</label>
+              <select class="form-control" id="race">
+                <option>Human</option>
+                <option>Dwarf</option>
+                <option>Elf</option>
+                <option>High Elf</option>
+                <option>Troll</option>
+                <option>Orc</option>
+                <option>Halfling</option>
+              </select>
+            </div>
+            <button type="submit" name="button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
